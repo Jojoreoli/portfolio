@@ -314,7 +314,7 @@ body,
     flex-direction: column;
     gap: 10px;
     border-right: none;
-    padding: 0 50px;
+    padding: 20px 50px;
 
     & .home__contentTitle {
       font-size: 3vw;
@@ -349,6 +349,7 @@ body,
         }
 
         & .content__text {
+          text-align: justify;
           font-size: 18px;
           & b {
             font-weight: 700;
