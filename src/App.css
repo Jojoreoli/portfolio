@@ -409,6 +409,152 @@ body,
   }
 }
 
+.about {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: auto;
+  left: auto;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  transition: width 0.8s ease, height 0.8s ease, bottom 0.8s ease,
+    right 0.8s ease, top 0.8s ease, left 0.8s ease, background-color 0.4s ease,
+    opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  font-family: var(--font-aileron);
+
+
+  & .about__title {
+    font-size: 3em;
+    color: var(--color-red);
+    font-weight: 700;
+    align-self: flex-start;
+  }
+
+  & .about__introSection {
+    display: flex;
+    gap: 10%;
+
+    & .about__introContent {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      & .about__intro {
+        font-size: 1.3em;
+        text-align: justify;
+        color: var(--color-black);
+      }
+    }
+    & .about__image {
+      object-fit: cover;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      max-height: 30vh;
+    }
+  }
+
+  .about__section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .about__sectionTitle {
+      color: var(--color-red);
+      font-weight: 700;
+      font-size: 1.9em;
+    }
+    .about__SectionContent {
+      font-size: 1.2em;
+      color: var(--color-black);
+    }
+  }
+  .about__contact {
+    position: absolute;
+    bottom: 5px;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & .about__contactContainer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      & img {
+        width: 30px;
+        height: 30px;
+      }
+      & a{
+        background-color: transparent;
+        font-family: var(--font-aileron);
+        border: none;
+        color: var(--color-black);
+        font-weight: 700;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all linear 0.1s;
+        text-decoration: none;
+        height: 100%;
+        & svg {
+          transition: all ease 0.2s;
+          color: #0077B7;
+          &:hover {
+            color: var(--color-red);
+          }
+        }
+        &:hover {
+          color: var(--color-red);
+        }
+      }
+    }
+  }
+}
+
+.closeButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: var(--color-black);
+  z-index: 99999999;
+  background-color: transparent;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  visibility: visible;
+  opacity: 1;
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &:hover {
+    color: var(--color-red)
+  }
+}
+
+.about.--open {
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  top: auto;
+  left: auto;
+  background-color: var(--color-bg); /* ou var(--color-bg) se preferir */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10% 10%;
+  box-sizing: border-box;
+
+}
+
 @keyframes expandTriangle {
   from {
     transform: rotate(0deg);
