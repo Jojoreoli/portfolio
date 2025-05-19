@@ -2,6 +2,7 @@ import { Footer } from "./footer";
 import phoneIcon from "../../../assets/phone.png";
 import mailIcon from "../../../assets/email.png";
 import { LinkedinLogo } from "../../../assets/linkedin";
+import picture from "../../../assets/4956422522379808341.jpg"
 
 interface IProps {
   isOpen: boolean;
@@ -38,7 +39,7 @@ export const About = (props: IProps) => {
           </div>
           <img
             className="about__image"
-            src="https://media.licdn.com/dms/image/v2/D4E03AQFKSGyDk1Qg_w/profile-displayphoto-shrink_800_800/B4EZai5FK0HcAg-/0/1746489595796?e=1752105600&v=beta&t=XWGzzRGGsAOR-fSWpUgzKEGp3fxijmQ55Q65S6bJKR0"
+            src={picture}
           />
         </div>
 
