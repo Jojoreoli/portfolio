@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 
-export const AnimatedGrid = () => {
+interface IProps {
+  active: boolean
+}
+
+export const AnimatedGrid = (props: IProps) => {
     const svgRef = useRef<SVGSVGElement>(null);
     useEffect(() => {
       if (!svgRef.current) return;
@@ -57,7 +61,7 @@ export const AnimatedGrid = () => {
       return () => cancelAnimationFrame(frameId);
     }, []);
   return (
-    <div className="home__grid">
+    <div className={`home__grid ${!props.active ? 'disabled' : ''}`}>
       <svg ref={svgRef} viewBox="0 0 100 100" preserveAspectRatio="none">
         <line x1="5" y1="10" x2="5" y2="100" />
         <line x1="18" y1="30" x2="18" y2="100" />

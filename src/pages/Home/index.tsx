@@ -27,7 +27,7 @@ export const Home = () => {
 
   return (
     <main className="home">
-      <AnimatedGrid />
+      <AnimatedGrid active={currentSection === 'home'} />
       <NavBar handleNavClick={handleNavClick} />
       <Title currentSection={currentSection} fadeOut={fadeOutContent} />
       <Footer onClick={()=> setAboutOpen(!aboutOpen)} />

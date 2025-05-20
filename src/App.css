@@ -149,7 +149,6 @@ body::-webkit-scrollbar-thumb,
   background-color: var(--color-red);
 }
 
-/* Scrollbar global para Firefox */
 body,
 * {
   scrollbar-width: thin;
@@ -427,7 +426,6 @@ body,
   pointer-events: none;
   font-family: var(--font-aileron);
 
-
   & .about__title {
     font-size: 3em;
     color: var(--color-red);
@@ -487,7 +485,7 @@ body,
         width: 30px;
         height: 30px;
       }
-      & a{
+      & a {
         background-color: transparent;
         font-family: var(--font-aileron);
         border: none;
@@ -500,7 +498,7 @@ body,
         height: 100%;
         & svg {
           transition: all ease 0.2s;
-          color: #0077B7;
+          color: #0077b7;
           &:hover {
             color: var(--color-red);
           }
@@ -531,7 +529,7 @@ body,
     opacity: 0;
   }
   &:hover {
-    color: var(--color-red)
+    color: var(--color-red);
   }
 }
 
@@ -542,7 +540,7 @@ body,
   right: 0;
   top: auto;
   left: auto;
-  background-color: var(--color-bg); /* ou var(--color-bg) se preferir */
+  background-color: var(--color-bg);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -552,7 +550,175 @@ body,
   gap: 20px;
   padding: 10% 10%;
   box-sizing: border-box;
+}
 
+@media (max-width: 600px) {
+  .home {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+
+    .home__section {
+      position: static;
+      left: 0;
+      bottom: 0;
+      transform: none;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px 10px 0 10px;
+      gap: 10px;
+
+      .home__title {
+        font-size: 20vw;
+      }
+      .home__subTitle {
+        font-size: 5vw;
+        align-self: flex-end;
+      }
+    }
+
+    .home__nav {
+      width: 100vw;
+      min-width: 0;
+      max-width: 100vw;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 10px;
+      padding: 10px 10px 0 10px;
+      height: auto;
+      clip-path: unset;
+
+      .home__navButton {
+        font-size: 5vw;
+        padding: 5px 10px;
+      }
+    }
+
+    .home__content {
+      max-width: 100vw;
+      height: auto;
+      min-height: 0;
+      padding: 10px 5vw;
+      border: none;
+      gap: 10px;
+
+      .home__contentTitle {
+        font-size: 4vw;
+      }
+      .home__contentContainer {
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        max-height: calc(60vh - 2em);
+
+        .content__content {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .content {
+      max-height: calc(100vh - 90px);
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .content__navigationButton {
+        position: fixed;
+        top: calc(100% - 10px);
+        bottom: 0;
+        margin: 10px 0;
+        z-index: 99;
+      }
+    }
+
+    .home__grid.disabled {
+      display: none;
+    }
+
+    .home__footer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-bg);
+      z-index: 0;
+    }
+    .about.--open {
+      padding: 20px 5vw;
+      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      box-sizing: border-box;
+      top: 0;
+      height: calc(100vh - 39px);
+
+      .about__title {
+        font-size: 2em;
+        text-align: center;
+      }
+
+      .about__introSection {
+        flex-direction: column;
+        gap: 20px;
+
+        .about__image {
+          max-width: 40vw;
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1 / 1;
+          align-self: center;
+          order: -1;
+          border-radius: 50%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .about__introContent {
+          gap: 20px;
+          .about__intro {
+            font-size: 1em;
+          }
+        }
+      }
+
+      .about__section {
+        gap: 8px;
+        .about__sectionTitle {
+          font-size: 1.2em;
+        }
+        .about__SectionContent {
+          font-size: 1em;
+        }
+      }
+
+      .about__contact {
+        position: static;
+        left: 0;
+        bottom: 0;
+        gap: 10px;
+
+        .about__contactContainer {
+          gap: 8px;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+          a {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes expandTriangle {
