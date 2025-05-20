@@ -202,7 +202,7 @@ body,
     height: 100%;
     width: 25vw;
     clip-path: polygon(0 0, 0 100%, 100% 100%);
-    z-index: 20;
+    z-index: 200;
 
     & .home__navButton {
       background-color: transparent;
@@ -237,7 +237,7 @@ body,
     animation: expandTriangle 0.5s ease-in-out forwards;
     animation-direction: alternate;
     animation-iteration-count: 2;
-    z-index: 10;
+    z-index: 100;
   }
 
   & .home__section {
@@ -557,7 +557,7 @@ body,
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     overflow-x: hidden;
 
@@ -623,7 +623,7 @@ body,
     }
 
     .content {
-      max-height: calc(100vh - 90px);
+      max-height: calc(100dvh - 90px);
       overflow-y: scroll;
       overflow-x: hidden;
       .content__navigationButton {
@@ -642,14 +642,9 @@ body,
     .home__footer {
       position: fixed;
       bottom: 0;
-      right: 0;
+      right: 45%;
       text-align: center;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--color-bg);
-      z-index: 0;
+      z-index: 10;
     }
     .about.--open {
       padding: 20px 5vw;
@@ -659,7 +654,7 @@ body,
       justify-content: space-between;
       box-sizing: border-box;
       top: 0;
-      height: calc(100vh - 39px);
+      height: calc(100dvh - 39px);
 
       .about__title {
         font-size: 2em;
