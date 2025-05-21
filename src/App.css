@@ -420,7 +420,7 @@ body,
   transition: width 0.8s ease, height 0.8s ease, bottom 0.8s ease,
     right 0.8s ease, top 0.8s ease, left 0.8s ease, background-color 0.4s ease,
     opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 99;
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -654,7 +654,11 @@ body,
       justify-content: space-between;
       box-sizing: border-box;
       top: 0;
-      height: calc(100dvh - 39px);
+      height: calc(100dvh);
+
+      .home__footer {
+        display: none;
+      }
 
       .about__title {
         font-size: 2em;
